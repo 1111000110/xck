@@ -1,0 +1,9 @@
+/home/zhangxuan/apps/XCK/build/CMakeFiles/rebuild_cache.dir
+/home/zhangxuan/apps/XCK/build/CMakeFiles/test_config.dir
+/home/zhangxuan/apps/XCK/build/CMakeFiles/edit_cache.dir
+/home/zhangxuan/apps/XCK/build/CMakeFiles/test_thread.dir
+/home/zhangxuan/apps/XCK/build/CMakeFiles/test.dir
+/home/zhangxuan/apps/XCK/build/CMakeFiles/thread.dir
+/home/zhangxuan/apps/XCK/build/CMakeFiles/config.dir
+/home/zhangxuan/apps/XCK/build/CMakeFiles/log.dir
+/home/zhangxuan/apps/XCK/build/CMakeFiles/util.dir

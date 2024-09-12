@@ -1,0 +1,26 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/zhangxuan/apps/XCK/code/util.cc
+util.h
+/home/zhangxuan/apps/XCK/code/util.h
+
+/home/zhangxuan/apps/XCK/code/util.h
+pthread.h
+-
+stdio.h
+-
+unistd.h
+-
+sys/syscall.h
+-
+sys/types.h
+-
+stdint.h
+-
+

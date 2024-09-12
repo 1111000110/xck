@@ -1,0 +1,30 @@
+logs:
+  - name: root
+    level: info
+    formatter: "%d%T%m%n"
+    appenders:
+     - type: FileLogAppender
+       file: log.txt
+     - type: StdoutLogAppender
+  - name: system
+    level: debug
+    formatter: "%d%T%m%n"
+    appenders:
+     - type: FileLogAppender
+       file: log.txt
+     - type: StdoutLogAppender
+system:
+    port: 9900
+    value: 15
+    val: [1,2,3,4,5]
+    list: [6,7,8,9,10]
+    set: [1,2,3]
+    uset: [2,2,3,4,5]
+    map:
+      a: 5
+      b: 6
+      c: 7
+    umap:
+      a: 5
+      b: 6
+      c: 7
