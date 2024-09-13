@@ -5,4 +5,5 @@
 #include "Config/Config_H/Config.h"
 #include "singleton.h"
 #include "Thread/Thread_H/Thread.h"
+#include "Macro.h"
 #endif

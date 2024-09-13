@@ -84,10 +84,6 @@ LogEventWarn.h
 Logger.h
 /home/zhangxuan/apps/XCK/code/Log/Log_H/Logger.h
 
-/home/zhangxuan/apps/XCK/code/Thread/Thread_CC/Semaphore.cc
-../Thread_H/Semaphore.h
-/home/zhangxuan/apps/XCK/code/Thread/Thread_H/Semaphore.h
-
 /home/zhangxuan/apps/XCK/code/Thread/Thread_CC/Thread.cc
 ../Thread_H/Thread.h
 /home/zhangxuan/apps/XCK/code/Thread/Thread_H/Thread.h

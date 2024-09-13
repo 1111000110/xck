@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/test_util.dir/tests/test_util.cc.o  -o ../bin/test_util  -Wl,-rpath,/home/zhangxuan/apps/XCK/lib ../lib/libutil.so ../lib/liblog.so ../lib/libconfig.so ../lib/libthread.so -lyaml-cpp -lpthread 

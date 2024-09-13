@@ -53,6 +53,7 @@ CMAKE_BINARY_DIR = /home/zhangxuan/apps/XCK/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/test_util.dir/all
 all: CMakeFiles/test_config.dir/all
 all: CMakeFiles/test_thread.dir/all
 all: CMakeFiles/test.dir/all
@@ -69,6 +70,7 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/test_util.dir/clean
 clean: CMakeFiles/test_config.dir/clean
 clean: CMakeFiles/test_thread.dir/clean
 clean: CMakeFiles/test.dir/clean
@@ -80,13 +82,43 @@ clean: CMakeFiles/util.dir/clean
 .PHONY : clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/test_util.dir
+
+# All Build rule for target.
+CMakeFiles/test_util.dir/all: CMakeFiles/thread.dir/all
+CMakeFiles/test_util.dir/all: CMakeFiles/config.dir/all
+CMakeFiles/test_util.dir/all: CMakeFiles/log.dir/all
+CMakeFiles/test_util.dir/all: CMakeFiles/util.dir/all
+	$(MAKE) -f CMakeFiles/test_util.dir/build.make CMakeFiles/test_util.dir/depend
+	$(MAKE) -f CMakeFiles/test_util.dir/build.make CMakeFiles/test_util.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhangxuan/apps/XCK/build/CMakeFiles --progress-num=19,20 "Built target test_util"
+.PHONY : CMakeFiles/test_util.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_util.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangxuan/apps/XCK/build/CMakeFiles 19
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_util.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangxuan/apps/XCK/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_util.dir/rule
+
+# Convenience name for target.
+test_util: CMakeFiles/test_util.dir/rule
+
+.PHONY : test_util
+
+# clean rule for target.
+CMakeFiles/test_util.dir/clean:
+	$(MAKE) -f CMakeFiles/test_util.dir/build.make CMakeFiles/test_util.dir/clean
+.PHONY : CMakeFiles/test_util.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/test_config.dir
 
 # All Build rule for target.
-CMakeFiles/test_config.dir/all: CMakeFiles/config.dir/all
-CMakeFiles/test_config.dir/all: CMakeFiles/util.dir/all
 CMakeFiles/test_config.dir/all: CMakeFiles/thread.dir/all
+CMakeFiles/test_config.dir/all: CMakeFiles/config.dir/all
 CMakeFiles/test_config.dir/all: CMakeFiles/log.dir/all
+CMakeFiles/test_config.dir/all: CMakeFiles/util.dir/all
 	$(MAKE) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/depend
 	$(MAKE) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhangxuan/apps/XCK/build/CMakeFiles --progress-num=15,16 "Built target test_config"
@@ -113,10 +145,10 @@ CMakeFiles/test_config.dir/clean:
 # Target rules for target CMakeFiles/test_thread.dir
 
 # All Build rule for target.
-CMakeFiles/test_thread.dir/all: CMakeFiles/config.dir/all
-CMakeFiles/test_thread.dir/all: CMakeFiles/util.dir/all
 CMakeFiles/test_thread.dir/all: CMakeFiles/thread.dir/all
+CMakeFiles/test_thread.dir/all: CMakeFiles/config.dir/all
 CMakeFiles/test_thread.dir/all: CMakeFiles/log.dir/all
+CMakeFiles/test_thread.dir/all: CMakeFiles/util.dir/all
 	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/depend
 	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhangxuan/apps/XCK/build/CMakeFiles --progress-num=17,18 "Built target test_thread"
@@ -143,10 +175,10 @@ CMakeFiles/test_thread.dir/clean:
 # Target rules for target CMakeFiles/test.dir
 
 # All Build rule for target.
-CMakeFiles/test.dir/all: CMakeFiles/config.dir/all
-CMakeFiles/test.dir/all: CMakeFiles/util.dir/all
 CMakeFiles/test.dir/all: CMakeFiles/thread.dir/all
+CMakeFiles/test.dir/all: CMakeFiles/config.dir/all
 CMakeFiles/test.dir/all: CMakeFiles/log.dir/all
+CMakeFiles/test.dir/all: CMakeFiles/util.dir/all
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/depend
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhangxuan/apps/XCK/build/CMakeFiles --progress-num=13,14 "Built target test"
@@ -176,7 +208,7 @@ CMakeFiles/test.dir/clean:
 CMakeFiles/thread.dir/all:
 	$(MAKE) -f CMakeFiles/thread.dir/build.make CMakeFiles/thread.dir/depend
 	$(MAKE) -f CMakeFiles/thread.dir/build.make CMakeFiles/thread.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhangxuan/apps/XCK/build/CMakeFiles --progress-num=19,20,21 "Built target thread"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhangxuan/apps/XCK/build/CMakeFiles --progress-num=21,22,23 "Built target thread"
 .PHONY : CMakeFiles/thread.dir/all
 
 # Build rule for subdir invocation for target.
@@ -257,7 +289,7 @@ CMakeFiles/log.dir/clean:
 CMakeFiles/util.dir/all:
 	$(MAKE) -f CMakeFiles/util.dir/build.make CMakeFiles/util.dir/depend
 	$(MAKE) -f CMakeFiles/util.dir/build.make CMakeFiles/util.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhangxuan/apps/XCK/build/CMakeFiles --progress-num=22,23 "Built target util"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhangxuan/apps/XCK/build/CMakeFiles --progress-num=24,25 "Built target util"
 .PHONY : CMakeFiles/util.dir/all
 
 # Build rule for subdir invocation for target.

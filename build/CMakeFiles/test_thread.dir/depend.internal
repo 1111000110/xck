@@ -14,6 +14,7 @@ CMakeFiles/test_thread.dir/tests/test_thread.cc.o
  /home/zhangxuan/apps/XCK/code/Log/Log_H/LogLevel.h
  /home/zhangxuan/apps/XCK/code/Log/Log_H/Logger.h
  /home/zhangxuan/apps/XCK/code/Log/Log_H/LoggerManger.h
+ /home/zhangxuan/apps/XCK/code/Macro.h
  /home/zhangxuan/apps/XCK/code/Thread/Thread_H/Mutex.h
  /home/zhangxuan/apps/XCK/code/Thread/Thread_H/RWMutex.h
  /home/zhangxuan/apps/XCK/code/Thread/Thread_H/Semaphore.h

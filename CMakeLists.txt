@@ -17,14 +17,17 @@ include_directories(/home/zhangxuan/apps/yaml-cpp/include)
 add_executable(test tests/test.cc)#生成test可执行文件
 add_executable(test_config tests/test_config.cc)#生成test_config可执行文件
 add_executable(test_thread tests/test_thread.cc)#生成test_config可执行文件
+add_executable(test_util tests/test_util.cc)#生成test_config可执行文件
 #可执行文件依赖的
 set(count util log config thread )
 add_dependencies(test ${count})#main文件对动态库的依赖
 add_dependencies(test_config  ${count})#main文件对动态库的依赖
 add_dependencies(test_thread  ${count})
+add_dependencies(test_util  ${count})
 #生成可执行文件时链接的
 target_link_libraries(test  ${count})
 target_link_libraries(test_config ${count} yaml-cpp)
 target_link_libraries(test_thread  ${count} yaml-cpp pthread)
+target_link_libraries(test_util  ${count} yaml-cpp pthread)
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)

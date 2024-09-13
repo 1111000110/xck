@@ -1,4 +1,5 @@
 /home/zhangxuan/apps/XCK/build/CMakeFiles/rebuild_cache.dir
+/home/zhangxuan/apps/XCK/build/CMakeFiles/test_util.dir
 /home/zhangxuan/apps/XCK/build/CMakeFiles/test_config.dir
 /home/zhangxuan/apps/XCK/build/CMakeFiles/edit_cache.dir
 /home/zhangxuan/apps/XCK/build/CMakeFiles/test_thread.dir

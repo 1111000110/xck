@@ -140,6 +140,10 @@ LogEventWarn.h
 Logger.h
 /home/zhangxuan/apps/XCK/code/Log/Log_H/Logger.h
 
+/home/zhangxuan/apps/XCK/code/Macro.h
+string.h
+-
+
 /home/zhangxuan/apps/XCK/code/Thread/Thread_H/Mutex.h
 mutex
 -
@@ -209,6 +213,8 @@ singleton.h
 /home/zhangxuan/apps/XCK/code/singleton.h
 Thread/Thread_H/Thread.h
 /home/zhangxuan/apps/XCK/code/Thread/Thread_H/Thread.h
+Macro.h
+/home/zhangxuan/apps/XCK/code/Macro.h
 
 /home/zhangxuan/apps/XCK/tests/test_thread.cc
 ../code/zx.h

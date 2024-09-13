@@ -13,6 +13,7 @@ CMakeFiles/test_thread.dir/tests/test_thread.cc.o: ../code/Log/Log_H/LogFormatte
 CMakeFiles/test_thread.dir/tests/test_thread.cc.o: ../code/Log/Log_H/LogLevel.h
 CMakeFiles/test_thread.dir/tests/test_thread.cc.o: ../code/Log/Log_H/Logger.h
 CMakeFiles/test_thread.dir/tests/test_thread.cc.o: ../code/Log/Log_H/LoggerManger.h
+CMakeFiles/test_thread.dir/tests/test_thread.cc.o: ../code/Macro.h
 CMakeFiles/test_thread.dir/tests/test_thread.cc.o: ../code/Thread/Thread_H/Mutex.h
 CMakeFiles/test_thread.dir/tests/test_thread.cc.o: ../code/Thread/Thread_H/RWMutex.h
 CMakeFiles/test_thread.dir/tests/test_thread.cc.o: ../code/Thread/Thread_H/Semaphore.h
