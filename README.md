@@ -1,7 +1,5 @@
 # 配置方式
-# 配置方式
-
-```
+```shell
 rm -rf build
 mkdir build
 cd build
