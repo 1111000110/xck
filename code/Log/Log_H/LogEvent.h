@@ -12,13 +12,16 @@ class Logger;
 class LogEvent {
 public:
 	typedef std::shared_ptr<LogEvent> ptr;
-	LogEvent(std::shared_ptr<Logger>logger,LogLevel::Level level,const char* file, int32_t line, uint32_t elapse, uint32_t threadId, uint32_t fiberId, uint64_t time);
+	LogEvent(std::shared_ptr<Logger>logger,LogLevel::Level level,const char* file, int32_t line, uint32_t elapse, uint32_t threadId, uint32_t fiberId, uint64_t time,const std::string& thread_name);
 	const char* getFile()const { return m_file; }
 	int32_t getLine() const{ return m_line; }//行号
 	uint32_t getElapse()const { return m_elapse; }//程序启动开始到现在的毫秒数
 	uint32_t getThreadId()const { return m_threadId; }//线程ID
 	uint32_t getFiberId()const { return m_fiberId; }//协程ID
 	uint64_t getTime()const { return m_time; }//时间戳
+	std::string& getThreadName(){
+		return m_thread_name;
+	}
 	std::string getComtent()const{return m_ss.str();}//内容
 	std::stringstream& getSS() {
 		return m_ss;
@@ -36,6 +39,7 @@ private:
 	uint32_t m_threadId = 0;//线程ID
 	uint32_t m_fiberId = 0;//协程ID
 	uint64_t m_time;//时间戳
+	std::string m_thread_name;
 	std::stringstream m_ss;//数据
 
 };

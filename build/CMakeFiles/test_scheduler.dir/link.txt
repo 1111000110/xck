@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/test_scheduler.dir/tests/test_scheduler.cc.o  -o ../bin/test_scheduler  -Wl,-rpath,/home/zhangxuan/apps/XCK/lib ../lib/libfiber.so ../lib/libutil.so ../lib/liblog.so ../lib/libthread.so ../lib/libconfig.so -lyaml-cpp -lpthread 

@@ -81,8 +81,9 @@ test_util_EXTERNAL_OBJECTS =
 ../bin/test_util: CMakeFiles/test_util.dir/build.make
 ../bin/test_util: ../lib/libutil.so
 ../bin/test_util: ../lib/liblog.so
-../bin/test_util: ../lib/libconfig.so
 ../bin/test_util: ../lib/libthread.so
+../bin/test_util: ../lib/libconfig.so
+../bin/test_util: ../lib/libfiber.so
 ../bin/test_util: CMakeFiles/test_util.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/zhangxuan/apps/XCK/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../bin/test_util"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/test_util.dir/link.txt --verbose=$(VERBOSE)

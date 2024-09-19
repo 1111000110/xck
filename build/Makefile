@@ -111,6 +111,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named test_fiber
+
+# Build rule for target.
+test_fiber: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_fiber
+.PHONY : test_fiber
+
+# fast build rule for target.
+test_fiber/fast:
+	$(MAKE) -f CMakeFiles/test_fiber.dir/build.make CMakeFiles/test_fiber.dir/build
+.PHONY : test_fiber/fast
+
+#=============================================================================
 # Target rules for targets named test_util
 
 # Build rule for target.
@@ -176,6 +189,19 @@ thread/fast:
 .PHONY : thread/fast
 
 #=============================================================================
+# Target rules for targets named test_scheduler
+
+# Build rule for target.
+test_scheduler: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 test_scheduler
+.PHONY : test_scheduler
+
+# fast build rule for target.
+test_scheduler/fast:
+	$(MAKE) -f CMakeFiles/test_scheduler.dir/build.make CMakeFiles/test_scheduler.dir/build
+.PHONY : test_scheduler/fast
+
+#=============================================================================
 # Target rules for targets named config
 
 # Build rule for target.
@@ -187,6 +213,19 @@ config: cmake_check_build_system
 config/fast:
 	$(MAKE) -f CMakeFiles/config.dir/build.make CMakeFiles/config.dir/build
 .PHONY : config/fast
+
+#=============================================================================
+# Target rules for targets named fiber
+
+# Build rule for target.
+fiber: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 fiber
+.PHONY : fiber
+
+# fast build rule for target.
+fiber/fast:
+	$(MAKE) -f CMakeFiles/fiber.dir/build.make CMakeFiles/fiber.dir/build
+.PHONY : fiber/fast
 
 #=============================================================================
 # Target rules for targets named log
@@ -294,6 +333,60 @@ code/Config/Config_CC/ConfigVarBase.s: code/Config/Config_CC/ConfigVarBase.cc.s
 code/Config/Config_CC/ConfigVarBase.cc.s:
 	$(MAKE) -f CMakeFiles/config.dir/build.make CMakeFiles/config.dir/code/Config/Config_CC/ConfigVarBase.cc.s
 .PHONY : code/Config/Config_CC/ConfigVarBase.cc.s
+
+code/Fiber/Fiber_CC/fiber.o: code/Fiber/Fiber_CC/fiber.cc.o
+
+.PHONY : code/Fiber/Fiber_CC/fiber.o
+
+# target to build an object file
+code/Fiber/Fiber_CC/fiber.cc.o:
+	$(MAKE) -f CMakeFiles/fiber.dir/build.make CMakeFiles/fiber.dir/code/Fiber/Fiber_CC/fiber.cc.o
+.PHONY : code/Fiber/Fiber_CC/fiber.cc.o
+
+code/Fiber/Fiber_CC/fiber.i: code/Fiber/Fiber_CC/fiber.cc.i
+
+.PHONY : code/Fiber/Fiber_CC/fiber.i
+
+# target to preprocess a source file
+code/Fiber/Fiber_CC/fiber.cc.i:
+	$(MAKE) -f CMakeFiles/fiber.dir/build.make CMakeFiles/fiber.dir/code/Fiber/Fiber_CC/fiber.cc.i
+.PHONY : code/Fiber/Fiber_CC/fiber.cc.i
+
+code/Fiber/Fiber_CC/fiber.s: code/Fiber/Fiber_CC/fiber.cc.s
+
+.PHONY : code/Fiber/Fiber_CC/fiber.s
+
+# target to generate assembly for a file
+code/Fiber/Fiber_CC/fiber.cc.s:
+	$(MAKE) -f CMakeFiles/fiber.dir/build.make CMakeFiles/fiber.dir/code/Fiber/Fiber_CC/fiber.cc.s
+.PHONY : code/Fiber/Fiber_CC/fiber.cc.s
+
+code/Fiber/Fiber_CC/scheduler.o: code/Fiber/Fiber_CC/scheduler.cc.o
+
+.PHONY : code/Fiber/Fiber_CC/scheduler.o
+
+# target to build an object file
+code/Fiber/Fiber_CC/scheduler.cc.o:
+	$(MAKE) -f CMakeFiles/fiber.dir/build.make CMakeFiles/fiber.dir/code/Fiber/Fiber_CC/scheduler.cc.o
+.PHONY : code/Fiber/Fiber_CC/scheduler.cc.o
+
+code/Fiber/Fiber_CC/scheduler.i: code/Fiber/Fiber_CC/scheduler.cc.i
+
+.PHONY : code/Fiber/Fiber_CC/scheduler.i
+
+# target to preprocess a source file
+code/Fiber/Fiber_CC/scheduler.cc.i:
+	$(MAKE) -f CMakeFiles/fiber.dir/build.make CMakeFiles/fiber.dir/code/Fiber/Fiber_CC/scheduler.cc.i
+.PHONY : code/Fiber/Fiber_CC/scheduler.cc.i
+
+code/Fiber/Fiber_CC/scheduler.s: code/Fiber/Fiber_CC/scheduler.cc.s
+
+.PHONY : code/Fiber/Fiber_CC/scheduler.s
+
+# target to generate assembly for a file
+code/Fiber/Fiber_CC/scheduler.cc.s:
+	$(MAKE) -f CMakeFiles/fiber.dir/build.make CMakeFiles/fiber.dir/code/Fiber/Fiber_CC/scheduler.cc.s
+.PHONY : code/Fiber/Fiber_CC/scheduler.cc.s
 
 code/Log/Log_CC/LogAppender.o: code/Log/Log_CC/LogAppender.cc.o
 
@@ -619,6 +712,60 @@ tests/test_config.cc.s:
 	$(MAKE) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/tests/test_config.cc.s
 .PHONY : tests/test_config.cc.s
 
+tests/test_fiber.o: tests/test_fiber.cc.o
+
+.PHONY : tests/test_fiber.o
+
+# target to build an object file
+tests/test_fiber.cc.o:
+	$(MAKE) -f CMakeFiles/test_fiber.dir/build.make CMakeFiles/test_fiber.dir/tests/test_fiber.cc.o
+.PHONY : tests/test_fiber.cc.o
+
+tests/test_fiber.i: tests/test_fiber.cc.i
+
+.PHONY : tests/test_fiber.i
+
+# target to preprocess a source file
+tests/test_fiber.cc.i:
+	$(MAKE) -f CMakeFiles/test_fiber.dir/build.make CMakeFiles/test_fiber.dir/tests/test_fiber.cc.i
+.PHONY : tests/test_fiber.cc.i
+
+tests/test_fiber.s: tests/test_fiber.cc.s
+
+.PHONY : tests/test_fiber.s
+
+# target to generate assembly for a file
+tests/test_fiber.cc.s:
+	$(MAKE) -f CMakeFiles/test_fiber.dir/build.make CMakeFiles/test_fiber.dir/tests/test_fiber.cc.s
+.PHONY : tests/test_fiber.cc.s
+
+tests/test_scheduler.o: tests/test_scheduler.cc.o
+
+.PHONY : tests/test_scheduler.o
+
+# target to build an object file
+tests/test_scheduler.cc.o:
+	$(MAKE) -f CMakeFiles/test_scheduler.dir/build.make CMakeFiles/test_scheduler.dir/tests/test_scheduler.cc.o
+.PHONY : tests/test_scheduler.cc.o
+
+tests/test_scheduler.i: tests/test_scheduler.cc.i
+
+.PHONY : tests/test_scheduler.i
+
+# target to preprocess a source file
+tests/test_scheduler.cc.i:
+	$(MAKE) -f CMakeFiles/test_scheduler.dir/build.make CMakeFiles/test_scheduler.dir/tests/test_scheduler.cc.i
+.PHONY : tests/test_scheduler.cc.i
+
+tests/test_scheduler.s: tests/test_scheduler.cc.s
+
+.PHONY : tests/test_scheduler.s
+
+# target to generate assembly for a file
+tests/test_scheduler.cc.s:
+	$(MAKE) -f CMakeFiles/test_scheduler.dir/build.make CMakeFiles/test_scheduler.dir/tests/test_scheduler.cc.s
+.PHONY : tests/test_scheduler.cc.s
+
 tests/test_thread.o: tests/test_thread.cc.o
 
 .PHONY : tests/test_thread.o
@@ -679,6 +826,7 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... test_fiber"
 	@echo "... rebuild_cache"
 	@echo "... test_util"
 	@echo "... test_config"
@@ -686,7 +834,9 @@ help:
 	@echo "... test_thread"
 	@echo "... test"
 	@echo "... thread"
+	@echo "... test_scheduler"
 	@echo "... config"
+	@echo "... fiber"
 	@echo "... log"
 	@echo "... util"
 	@echo "... code/Config/Config_CC/Config.o"
@@ -698,6 +848,12 @@ help:
 	@echo "... code/Config/Config_CC/ConfigVarBase.o"
 	@echo "... code/Config/Config_CC/ConfigVarBase.i"
 	@echo "... code/Config/Config_CC/ConfigVarBase.s"
+	@echo "... code/Fiber/Fiber_CC/fiber.o"
+	@echo "... code/Fiber/Fiber_CC/fiber.i"
+	@echo "... code/Fiber/Fiber_CC/fiber.s"
+	@echo "... code/Fiber/Fiber_CC/scheduler.o"
+	@echo "... code/Fiber/Fiber_CC/scheduler.i"
+	@echo "... code/Fiber/Fiber_CC/scheduler.s"
 	@echo "... code/Log/Log_CC/LogAppender.o"
 	@echo "... code/Log/Log_CC/LogAppender.i"
 	@echo "... code/Log/Log_CC/LogAppender.s"
@@ -734,6 +890,12 @@ help:
 	@echo "... tests/test_config.o"
 	@echo "... tests/test_config.i"
 	@echo "... tests/test_config.s"
+	@echo "... tests/test_fiber.o"
+	@echo "... tests/test_fiber.i"
+	@echo "... tests/test_fiber.s"
+	@echo "... tests/test_scheduler.o"
+	@echo "... tests/test_scheduler.i"
+	@echo "... tests/test_scheduler.s"
 	@echo "... tests/test_thread.o"
 	@echo "... tests/test_thread.i"
 	@echo "... tests/test_thread.s"

@@ -1,5 +1,5 @@
 #include "../Thread_H/Thread.h"
-
+#include "../../Log/Log_H/LoggerManger.h"
 namespace zx{
     static thread_local Thread* t_thread = nullptr; // 定义一个线程局部变量，用于存储当前线程的Thread对象指针。
     static thread_local std::string t_thread_name = "UNKNOW"; // 定义一个线程局部变量，用于存储当前线程的名称。
@@ -21,6 +21,7 @@ namespace zx{
         Thread* thread = (Thread*)arg;
         // 设置当前线程的Thread对象指针为当前线程。
         t_thread = thread;
+        t_thread_name=thread->getName();
         // 获取当前线程的系统ID。
         thread->m_id = GetThreadid();
         // 设置线程的名称，名称长度限制为15个字符。
@@ -36,6 +37,7 @@ namespace zx{
 
     // Thread类的构造函数，接受一个函数和线程名称。
     Thread::Thread(std::function<void()> cv, const std::string& name):m_cb(cv),m_name(name),m_semaphore(0){
+       
         // 如果提供的名称为空，则默认为"UNKNOW"。
         if (name.empty()) {
             m_name = "UNKNOW";

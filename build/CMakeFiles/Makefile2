@@ -53,12 +53,15 @@ CMAKE_BINARY_DIR = /home/zhangxuan/apps/XCK/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/test_fiber.dir/all
 all: CMakeFiles/test_util.dir/all
 all: CMakeFiles/test_config.dir/all
 all: CMakeFiles/test_thread.dir/all
 all: CMakeFiles/test.dir/all
 all: CMakeFiles/thread.dir/all
+all: CMakeFiles/test_scheduler.dir/all
 all: CMakeFiles/config.dir/all
+all: CMakeFiles/fiber.dir/all
 all: CMakeFiles/log.dir/all
 all: CMakeFiles/util.dir/all
 
@@ -70,16 +73,50 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/test_fiber.dir/clean
 clean: CMakeFiles/test_util.dir/clean
 clean: CMakeFiles/test_config.dir/clean
 clean: CMakeFiles/test_thread.dir/clean
 clean: CMakeFiles/test.dir/clean
 clean: CMakeFiles/thread.dir/clean
+clean: CMakeFiles/test_scheduler.dir/clean
 clean: CMakeFiles/config.dir/clean
+clean: CMakeFiles/fiber.dir/clean
 clean: CMakeFiles/log.dir/clean
 clean: CMakeFiles/util.dir/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_fiber.dir
+
+# All Build rule for target.
+CMakeFiles/test_fiber.dir/all: CMakeFiles/thread.dir/all
+CMakeFiles/test_fiber.dir/all: CMakeFiles/config.dir/all
+CMakeFiles/test_fiber.dir/all: CMakeFiles/fiber.dir/all
+CMakeFiles/test_fiber.dir/all: CMakeFiles/log.dir/all
+CMakeFiles/test_fiber.dir/all: CMakeFiles/util.dir/all
+	$(MAKE) -f CMakeFiles/test_fiber.dir/build.make CMakeFiles/test_fiber.dir/depend
+	$(MAKE) -f CMakeFiles/test_fiber.dir/build.make CMakeFiles/test_fiber.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhangxuan/apps/XCK/build/CMakeFiles --progress-num=20,21 "Built target test_fiber"
+.PHONY : CMakeFiles/test_fiber.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_fiber.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangxuan/apps/XCK/build/CMakeFiles 22
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_fiber.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangxuan/apps/XCK/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_fiber.dir/rule
+
+# Convenience name for target.
+test_fiber: CMakeFiles/test_fiber.dir/rule
+
+.PHONY : test_fiber
+
+# clean rule for target.
+CMakeFiles/test_fiber.dir/clean:
+	$(MAKE) -f CMakeFiles/test_fiber.dir/build.make CMakeFiles/test_fiber.dir/clean
+.PHONY : CMakeFiles/test_fiber.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/test_util.dir
@@ -87,16 +124,17 @@ clean: CMakeFiles/util.dir/clean
 # All Build rule for target.
 CMakeFiles/test_util.dir/all: CMakeFiles/thread.dir/all
 CMakeFiles/test_util.dir/all: CMakeFiles/config.dir/all
+CMakeFiles/test_util.dir/all: CMakeFiles/fiber.dir/all
 CMakeFiles/test_util.dir/all: CMakeFiles/log.dir/all
 CMakeFiles/test_util.dir/all: CMakeFiles/util.dir/all
 	$(MAKE) -f CMakeFiles/test_util.dir/build.make CMakeFiles/test_util.dir/depend
 	$(MAKE) -f CMakeFiles/test_util.dir/build.make CMakeFiles/test_util.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhangxuan/apps/XCK/build/CMakeFiles --progress-num=19,20 "Built target test_util"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhangxuan/apps/XCK/build/CMakeFiles --progress-num=26,27 "Built target test_util"
 .PHONY : CMakeFiles/test_util.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test_util.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangxuan/apps/XCK/build/CMakeFiles 19
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangxuan/apps/XCK/build/CMakeFiles 22
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_util.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangxuan/apps/XCK/build/CMakeFiles 0
 .PHONY : CMakeFiles/test_util.dir/rule
@@ -117,16 +155,17 @@ CMakeFiles/test_util.dir/clean:
 # All Build rule for target.
 CMakeFiles/test_config.dir/all: CMakeFiles/thread.dir/all
 CMakeFiles/test_config.dir/all: CMakeFiles/config.dir/all
+CMakeFiles/test_config.dir/all: CMakeFiles/fiber.dir/all
 CMakeFiles/test_config.dir/all: CMakeFiles/log.dir/all
 CMakeFiles/test_config.dir/all: CMakeFiles/util.dir/all
 	$(MAKE) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/depend
 	$(MAKE) -f CMakeFiles/test_config.dir/build.make CMakeFiles/test_config.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhangxuan/apps/XCK/build/CMakeFiles --progress-num=15,16 "Built target test_config"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhangxuan/apps/XCK/build/CMakeFiles --progress-num=18,19 "Built target test_config"
 .PHONY : CMakeFiles/test_config.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test_config.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangxuan/apps/XCK/build/CMakeFiles 19
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangxuan/apps/XCK/build/CMakeFiles 22
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_config.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangxuan/apps/XCK/build/CMakeFiles 0
 .PHONY : CMakeFiles/test_config.dir/rule
@@ -147,16 +186,17 @@ CMakeFiles/test_config.dir/clean:
 # All Build rule for target.
 CMakeFiles/test_thread.dir/all: CMakeFiles/thread.dir/all
 CMakeFiles/test_thread.dir/all: CMakeFiles/config.dir/all
+CMakeFiles/test_thread.dir/all: CMakeFiles/fiber.dir/all
 CMakeFiles/test_thread.dir/all: CMakeFiles/log.dir/all
 CMakeFiles/test_thread.dir/all: CMakeFiles/util.dir/all
 	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/depend
 	$(MAKE) -f CMakeFiles/test_thread.dir/build.make CMakeFiles/test_thread.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhangxuan/apps/XCK/build/CMakeFiles --progress-num=17,18 "Built target test_thread"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhangxuan/apps/XCK/build/CMakeFiles --progress-num=24,25 "Built target test_thread"
 .PHONY : CMakeFiles/test_thread.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test_thread.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangxuan/apps/XCK/build/CMakeFiles 19
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangxuan/apps/XCK/build/CMakeFiles 22
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_thread.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangxuan/apps/XCK/build/CMakeFiles 0
 .PHONY : CMakeFiles/test_thread.dir/rule
@@ -175,18 +215,15 @@ CMakeFiles/test_thread.dir/clean:
 # Target rules for target CMakeFiles/test.dir
 
 # All Build rule for target.
-CMakeFiles/test.dir/all: CMakeFiles/thread.dir/all
-CMakeFiles/test.dir/all: CMakeFiles/config.dir/all
-CMakeFiles/test.dir/all: CMakeFiles/log.dir/all
-CMakeFiles/test.dir/all: CMakeFiles/util.dir/all
+CMakeFiles/test.dir/all:
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/depend
 	$(MAKE) -f CMakeFiles/test.dir/build.make CMakeFiles/test.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhangxuan/apps/XCK/build/CMakeFiles --progress-num=13,14 "Built target test"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhangxuan/apps/XCK/build/CMakeFiles --progress-num=16,17 "Built target test"
 .PHONY : CMakeFiles/test.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/test.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangxuan/apps/XCK/build/CMakeFiles 19
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangxuan/apps/XCK/build/CMakeFiles 2
 	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangxuan/apps/XCK/build/CMakeFiles 0
 .PHONY : CMakeFiles/test.dir/rule
@@ -208,7 +245,7 @@ CMakeFiles/test.dir/clean:
 CMakeFiles/thread.dir/all:
 	$(MAKE) -f CMakeFiles/thread.dir/build.make CMakeFiles/thread.dir/depend
 	$(MAKE) -f CMakeFiles/thread.dir/build.make CMakeFiles/thread.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhangxuan/apps/XCK/build/CMakeFiles --progress-num=21,22,23 "Built target thread"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhangxuan/apps/XCK/build/CMakeFiles --progress-num=28,29,30 "Built target thread"
 .PHONY : CMakeFiles/thread.dir/all
 
 # Build rule for subdir invocation for target.
@@ -227,6 +264,37 @@ thread: CMakeFiles/thread.dir/rule
 CMakeFiles/thread.dir/clean:
 	$(MAKE) -f CMakeFiles/thread.dir/build.make CMakeFiles/thread.dir/clean
 .PHONY : CMakeFiles/thread.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/test_scheduler.dir
+
+# All Build rule for target.
+CMakeFiles/test_scheduler.dir/all: CMakeFiles/thread.dir/all
+CMakeFiles/test_scheduler.dir/all: CMakeFiles/config.dir/all
+CMakeFiles/test_scheduler.dir/all: CMakeFiles/fiber.dir/all
+CMakeFiles/test_scheduler.dir/all: CMakeFiles/log.dir/all
+CMakeFiles/test_scheduler.dir/all: CMakeFiles/util.dir/all
+	$(MAKE) -f CMakeFiles/test_scheduler.dir/build.make CMakeFiles/test_scheduler.dir/depend
+	$(MAKE) -f CMakeFiles/test_scheduler.dir/build.make CMakeFiles/test_scheduler.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhangxuan/apps/XCK/build/CMakeFiles --progress-num=22,23 "Built target test_scheduler"
+.PHONY : CMakeFiles/test_scheduler.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/test_scheduler.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangxuan/apps/XCK/build/CMakeFiles 22
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/test_scheduler.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangxuan/apps/XCK/build/CMakeFiles 0
+.PHONY : CMakeFiles/test_scheduler.dir/rule
+
+# Convenience name for target.
+test_scheduler: CMakeFiles/test_scheduler.dir/rule
+
+.PHONY : test_scheduler
+
+# clean rule for target.
+CMakeFiles/test_scheduler.dir/clean:
+	$(MAKE) -f CMakeFiles/test_scheduler.dir/build.make CMakeFiles/test_scheduler.dir/clean
+.PHONY : CMakeFiles/test_scheduler.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/config.dir
@@ -256,13 +324,40 @@ CMakeFiles/config.dir/clean:
 .PHONY : CMakeFiles/config.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/fiber.dir
+
+# All Build rule for target.
+CMakeFiles/fiber.dir/all:
+	$(MAKE) -f CMakeFiles/fiber.dir/build.make CMakeFiles/fiber.dir/depend
+	$(MAKE) -f CMakeFiles/fiber.dir/build.make CMakeFiles/fiber.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhangxuan/apps/XCK/build/CMakeFiles --progress-num=5,6,7 "Built target fiber"
+.PHONY : CMakeFiles/fiber.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/fiber.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangxuan/apps/XCK/build/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/fiber.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/zhangxuan/apps/XCK/build/CMakeFiles 0
+.PHONY : CMakeFiles/fiber.dir/rule
+
+# Convenience name for target.
+fiber: CMakeFiles/fiber.dir/rule
+
+.PHONY : fiber
+
+# clean rule for target.
+CMakeFiles/fiber.dir/clean:
+	$(MAKE) -f CMakeFiles/fiber.dir/build.make CMakeFiles/fiber.dir/clean
+.PHONY : CMakeFiles/fiber.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/log.dir
 
 # All Build rule for target.
 CMakeFiles/log.dir/all:
 	$(MAKE) -f CMakeFiles/log.dir/build.make CMakeFiles/log.dir/depend
 	$(MAKE) -f CMakeFiles/log.dir/build.make CMakeFiles/log.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhangxuan/apps/XCK/build/CMakeFiles --progress-num=5,6,7,8,9,10,11,12 "Built target log"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhangxuan/apps/XCK/build/CMakeFiles --progress-num=8,9,10,11,12,13,14,15 "Built target log"
 .PHONY : CMakeFiles/log.dir/all
 
 # Build rule for subdir invocation for target.
@@ -289,7 +384,7 @@ CMakeFiles/log.dir/clean:
 CMakeFiles/util.dir/all:
 	$(MAKE) -f CMakeFiles/util.dir/build.make CMakeFiles/util.dir/depend
 	$(MAKE) -f CMakeFiles/util.dir/build.make CMakeFiles/util.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhangxuan/apps/XCK/build/CMakeFiles --progress-num=24,25 "Built target util"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/zhangxuan/apps/XCK/build/CMakeFiles --progress-num=31,32 "Built target util"
 .PHONY : CMakeFiles/util.dir/all
 
 # Build rule for subdir invocation for target.

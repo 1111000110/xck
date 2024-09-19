@@ -13,30 +13,30 @@
 #include <time.h>
 namespace zx{
 //日志格式器
-class Logger;
-class LogFormatter {
-public:
-	typedef std::shared_ptr<LogFormatter>ptr;
-	LogFormatter(const std::string& pattern);
-	std::string format(LogLevel::Level level, LogEvent::ptr event);
-public:
-	class FormatItem {
+	class Logger;
+	class LogFormatter {
 	public:
-		typedef std::shared_ptr<FormatItem>ptr;
-		virtual ~FormatItem(){}
-		virtual void format(std::ostream& os,  LogLevel::Level level, LogEvent::ptr event) = 0;
+		typedef std::shared_ptr<LogFormatter>ptr;
+		LogFormatter(const std::string& pattern);
+		std::string format(LogLevel::Level level, LogEvent::ptr event);
+	public:
+		class FormatItem {
+		public:
+			typedef std::shared_ptr<FormatItem>ptr;
+			virtual ~FormatItem(){}
+			virtual void format(std::ostream& os,  LogLevel::Level level, LogEvent::ptr event) = 0;
+		};
+		void init();
+		bool isError()const{
+			return m_error;
+		}
+		const std::string getPattern()const {return m_pattern;}
+	private:
+		std::string m_pattern;
+		std::vector<FormatItem::ptr>m_items;
+		bool m_error=false;
 	};
-	void init();
-	bool isError()const{
-		return m_error;
-	}
-	const std::string getPattern()const {return m_pattern;}
-private:
-	std::string m_pattern;
-	std::vector<FormatItem::ptr>m_items;
-	bool m_error=false;
-};
-class MessageFormatItem :public LogFormatter::FormatItem {
+	class MessageFormatItem :public LogFormatter::FormatItem {
 	public:
 		MessageFormatItem(const std::string& str) {}
 		void format(std::ostream& os,  LogLevel::Level level, LogEvent::ptr event) {
@@ -110,6 +110,13 @@ class MessageFormatItem :public LogFormatter::FormatItem {
 			os << event->getLine();
 		}
 	};
+	class ThreadNameFormatItem :public LogFormatter::FormatItem {
+	public:
+		ThreadNameFormatItem(const std::string& str) {}
+		void format(std::ostream& os, LogLevel::Level level, LogEvent::ptr event) {
+			os << event->getThreadName();
+		}
+	};
 	class NewLineFormatItem :public LogFormatter::FormatItem {
 	public:
 		NewLineFormatItem(const std::string& str) {}
@@ -134,4 +141,5 @@ class MessageFormatItem :public LogFormatter::FormatItem {
 		}
     };
 }
+
 #endif

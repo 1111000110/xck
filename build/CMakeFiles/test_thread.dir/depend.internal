@@ -6,6 +6,8 @@ CMakeFiles/test_thread.dir/tests/test_thread.cc.o
  /home/zhangxuan/apps/XCK/code/Config/Config_H/ConfigVar.h
  /home/zhangxuan/apps/XCK/code/Config/Config_H/ConfigVarBase.h
  /home/zhangxuan/apps/XCK/code/Config/Config_H/LexicalCast.h
+ /home/zhangxuan/apps/XCK/code/Fiber/Fiber_H/fiber.h
+ /home/zhangxuan/apps/XCK/code/Fiber/Fiber_H/scheduler.h
  /home/zhangxuan/apps/XCK/code/Log/Log_H/LogAppender.h
  /home/zhangxuan/apps/XCK/code/Log/Log_H/LogDefine.h
  /home/zhangxuan/apps/XCK/code/Log/Log_H/LogEvent.h

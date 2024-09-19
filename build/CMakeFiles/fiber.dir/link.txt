@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC   -shared -Wl,-soname,libfiber.so -o ../lib/libfiber.so CMakeFiles/fiber.dir/code/Fiber/Fiber_CC/fiber.cc.o CMakeFiles/fiber.dir/code/Fiber/Fiber_CC/scheduler.cc.o 

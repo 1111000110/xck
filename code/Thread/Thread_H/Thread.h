@@ -5,7 +5,7 @@
 #include <functional>
 #include <pthread.h>
 #include "../../util.h"
-#include "../../Log/Log_H/LoggerManger.h"
+
 #include "Semaphore.h"
 #include "Mutex.h"
 #include "RWMutex.h"

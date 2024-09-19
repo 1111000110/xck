@@ -4,8 +4,9 @@
 #include <pthread.h>
 #include <stdint.h>
 #include <semaphore.h>
-#include "../../Log/Log_H/LoggerManger.h"
+
 #include <memory>
+//#include "../../zx.h"
 namespace zx{
     class Semaphore{
         public:

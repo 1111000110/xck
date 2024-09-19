@@ -15,10 +15,6 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/zhangxuan/apps/XCK/build/CMakeFiles/util.dir/DependInfo.cmake"
-  "/home/zhangxuan/apps/XCK/build/CMakeFiles/log.dir/DependInfo.cmake"
-  "/home/zhangxuan/apps/XCK/build/CMakeFiles/config.dir/DependInfo.cmake"
-  "/home/zhangxuan/apps/XCK/build/CMakeFiles/thread.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

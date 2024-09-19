@@ -1,15 +1,23 @@
-#include <iostream>
-#include <thread>
-#include "../code/Log/Log_H/LoggerManger.h"
-#include "../code/util.h"
-#include <sstream>
+#include <ucontext.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <memory>
+void sv(){
+  printf("sv\n");
+  return;
+}
+void *s=(void *)malloc(1024*1024);
 int main(){
-    auto i=zx::LoggerManger::LoggerMgr::GetInstance();
-    auto logger1=i->getLogger("xxx");
-    auto logger2=i->getLogger("zhangxuan");
-    auto logger3=i->getLogger("liuxueqian");
-    ZX_LOG_ERROR(logger1)<<"what happender";
-     ZX_LOG_ERROR(logger2)<<"zhangxuan";
-      ZX_LOG_ERROR(logger3)<<"liuxueqian";
+      ucontext_t t;
+    ucontext_t t2;
+    getcontext(&t2);
+    getcontext(&t);
+    printf("hello world\n");
+    makecontext(&t2,&sv,0);//参数格式
+    t2.uc_link=&t;
+    t2.uc_stack.ss_sp=s;
+    t2.uc_stack.ss_size=1024*1024;
+    setcontext(&t2);
+    setcontext(&t);
     return 0;
 }

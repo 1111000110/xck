@@ -5,6 +5,8 @@ CMakeFiles/test_thread.dir/tests/test_thread.cc.o: ../code/Config/Config_H/Confi
 CMakeFiles/test_thread.dir/tests/test_thread.cc.o: ../code/Config/Config_H/ConfigVar.h
 CMakeFiles/test_thread.dir/tests/test_thread.cc.o: ../code/Config/Config_H/ConfigVarBase.h
 CMakeFiles/test_thread.dir/tests/test_thread.cc.o: ../code/Config/Config_H/LexicalCast.h
+CMakeFiles/test_thread.dir/tests/test_thread.cc.o: ../code/Fiber/Fiber_H/fiber.h
+CMakeFiles/test_thread.dir/tests/test_thread.cc.o: ../code/Fiber/Fiber_H/scheduler.h
 CMakeFiles/test_thread.dir/tests/test_thread.cc.o: ../code/Log/Log_H/LogAppender.h
 CMakeFiles/test_thread.dir/tests/test_thread.cc.o: ../code/Log/Log_H/LogDefine.h
 CMakeFiles/test_thread.dir/tests/test_thread.cc.o: ../code/Log/Log_H/LogEvent.h

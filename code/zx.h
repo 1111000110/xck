@@ -6,4 +6,5 @@
 #include "singleton.h"
 #include "Thread/Thread_H/Thread.h"
 #include "Macro.h"
+#include "Fiber/Fiber_H/scheduler.h"
 #endif

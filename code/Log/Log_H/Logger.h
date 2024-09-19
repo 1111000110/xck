@@ -8,9 +8,11 @@
 #include "LogAppender.h"
 #include "LogFormatter.h"
 #include "LogEventWarn.h"
+#include "../../Thread/Thread_H/Thread.h"
+#include "../../Fiber/Fiber_H/fiber.h"
 #define ZX_LOG_LEVEL(logger,level)\
     if(logger->getLevel()<=level)\
-        zx::LogEventWarn(zx::LogEvent::ptr (new zx::LogEvent(logger,level,__FILE__,__LINE__,0,zx::GetThreadid(),zx::GetFiberId(),time(0)))).getSS()
+        zx::LogEventWarn(zx::LogEvent::ptr (new zx::LogEvent(logger,level,__FILE__,__LINE__,0,zx::GetThreadid(),zx::GetFiberId(),time(0),zx::Thread::GetName()))).getSS()
 #define  ZX_LOG_ROOT() zx::LoggerManger::LoggerMgr::GetInstance()->getRoot()
 #define  ZX_LOG_DEBUGE(logger) ZX_LOG_LEVEL(logger,zx::LogLevel::DEBUG)
 #define  ZX_LOG_INFO(logger) ZX_LOG_LEVEL(logger,zx::LogLevel::INFO)

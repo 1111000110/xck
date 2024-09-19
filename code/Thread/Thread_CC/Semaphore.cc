@@ -1,4 +1,5 @@
 #include "../Thread_H/Semaphore.h"
+#include "../../Log/Log_H/LoggerManger.h"
 namespace zx{
     zx::Logger::ptr logger=ZX_LOG_ROOT();   
     Semaphore::Semaphore(uint32_t count){
