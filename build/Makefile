@@ -361,6 +361,33 @@ code/Fiber/Fiber_CC/fiber.cc.s:
 	$(MAKE) -f CMakeFiles/fiber.dir/build.make CMakeFiles/fiber.dir/code/Fiber/Fiber_CC/fiber.cc.s
 .PHONY : code/Fiber/Fiber_CC/fiber.cc.s
 
+code/Fiber/Fiber_CC/iomanager.o: code/Fiber/Fiber_CC/iomanager.cc.o
+
+.PHONY : code/Fiber/Fiber_CC/iomanager.o
+
+# target to build an object file
+code/Fiber/Fiber_CC/iomanager.cc.o:
+	$(MAKE) -f CMakeFiles/fiber.dir/build.make CMakeFiles/fiber.dir/code/Fiber/Fiber_CC/iomanager.cc.o
+.PHONY : code/Fiber/Fiber_CC/iomanager.cc.o
+
+code/Fiber/Fiber_CC/iomanager.i: code/Fiber/Fiber_CC/iomanager.cc.i
+
+.PHONY : code/Fiber/Fiber_CC/iomanager.i
+
+# target to preprocess a source file
+code/Fiber/Fiber_CC/iomanager.cc.i:
+	$(MAKE) -f CMakeFiles/fiber.dir/build.make CMakeFiles/fiber.dir/code/Fiber/Fiber_CC/iomanager.cc.i
+.PHONY : code/Fiber/Fiber_CC/iomanager.cc.i
+
+code/Fiber/Fiber_CC/iomanager.s: code/Fiber/Fiber_CC/iomanager.cc.s
+
+.PHONY : code/Fiber/Fiber_CC/iomanager.s
+
+# target to generate assembly for a file
+code/Fiber/Fiber_CC/iomanager.cc.s:
+	$(MAKE) -f CMakeFiles/fiber.dir/build.make CMakeFiles/fiber.dir/code/Fiber/Fiber_CC/iomanager.cc.s
+.PHONY : code/Fiber/Fiber_CC/iomanager.cc.s
+
 code/Fiber/Fiber_CC/scheduler.o: code/Fiber/Fiber_CC/scheduler.cc.o
 
 .PHONY : code/Fiber/Fiber_CC/scheduler.o
@@ -851,6 +878,9 @@ help:
 	@echo "... code/Fiber/Fiber_CC/fiber.o"
 	@echo "... code/Fiber/Fiber_CC/fiber.i"
 	@echo "... code/Fiber/Fiber_CC/fiber.s"
+	@echo "... code/Fiber/Fiber_CC/iomanager.o"
+	@echo "... code/Fiber/Fiber_CC/iomanager.i"
+	@echo "... code/Fiber/Fiber_CC/iomanager.s"
 	@echo "... code/Fiber/Fiber_CC/scheduler.o"
 	@echo "... code/Fiber/Fiber_CC/scheduler.i"
 	@echo "... code/Fiber/Fiber_CC/scheduler.s"

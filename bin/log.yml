@@ -1,5 +1,5 @@
 logs:
-  - name: system
+  - name: lixueqian
     level: debug
     formatter: "%d%T%m%n"
     appenders:

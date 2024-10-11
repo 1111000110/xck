@@ -6,7 +6,7 @@ logs:
      - type: FileLogAppender
        file: log.txt
      - type: StdoutLogAppender
-  - name: system
+  - name: liuxueqian
     level: debug
     formatter: "%d%T%m%n"
     appenders:

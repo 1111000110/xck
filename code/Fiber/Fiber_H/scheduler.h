@@ -6,6 +6,7 @@
 #include <vector>  // 包含动态数组相关的头文件
 #include <list>    // 包含双向链表相关的头文件
 #include <functional>  // 包含函数封装相关的头文件
+#include <iostream>
 #include <atomic>  // 包含原子操作相关的头文件
 
 // 协程调度器
@@ -70,15 +71,14 @@ namespace zx {
 
     private:
         template<class FiberOrCb>
-        bool scheduleNoLock(FiberOrCb fc, int thread) {
+        bool scheduleNoLock(FiberOrCb fc, int thread) {//增加任务
             bool need_tickle = m_fibers.empty();
             FiberAndThread ft(fc, thread);
             if(ft.fiber || ft.cb) {
-                m_fibers.push_back(ft);
+                m_fibers.push_back(ft); 
             }
             return need_tickle;
         }
-         // 私有模板方法，用于不锁定的情况下调度协程或回调
 
     private:
         struct FiberAndThread {  // 协程和线程的结构体
@@ -103,7 +103,7 @@ namespace zx {
     private:
         MutexType m_mutex;  // 互斥锁
         std::vector<Thread::ptr> m_threads;  // 线程列表
-        std::list<FiberAndThread> m_fibers;  // 协程和线程的列表
+        std::list<FiberAndThread> m_fibers;  // 协程和线程的列表,任务队列
         Fiber::ptr m_rootFiber;  // 主协程
         std::string m_name;  // 调度器名称
 

@@ -1,1 +1,1 @@
-/usr/bin/c++    -rdynamic CMakeFiles/test.dir/tests/test.cc.o  -o ../bin/test 
+/usr/bin/c++    -rdynamic CMakeFiles/test.dir/tests/test.cc.o  -o ../bin/test  -Wl,-rpath,/home/zhangxuan/apps/XCK/lib ../lib/libutil.so ../lib/liblog.so ../lib/libthread.so ../lib/libconfig.so ../lib/libfiber.so -lyaml-cpp -lpthread 

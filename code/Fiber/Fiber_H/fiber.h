@@ -27,7 +27,7 @@ namespace zx{
             Fiber(); // 私有构造函数，用于初始化主协程
         public:
             // 公共构造函数，接受一个函数对象和栈大小，用于创建新的协程
-            Fiber(std::function<void()> cb, size_t stacksize=0,bool ues_callor=false);
+            Fiber(std::function<void()> cb, size_t stacksize=0,bool ues_callor=true);
             ~Fiber(); // 析构函数，用于清理协程资源
             // 重置协程函数，并重置状态
             void reset(std::function<void()> cb); // 参数为新的函数对象

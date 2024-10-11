@@ -85,8 +85,7 @@ namespace zx{
         vec.push_back(std::make_tuple(nstr, "", 0));
     }
     static std::map<std::string, std::function<FormatItem::ptr(const std::string& str)> > s_format_items = {
-#define XX(str, C) \
-        {#str, [](const std::string& fmt) { return FormatItem::ptr(new C(fmt));}}
+#define XX(str, C) {#str, [](const std::string& fmt) { return FormatItem::ptr(new C(fmt));}}
 
         XX(m, MessageFormatItem),           //m:消息
         XX(p, LevelFormatItem),             //p:日志级别

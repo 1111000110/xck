@@ -2,22 +2,17 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <memory>
-void sv(){
-  printf("sv\n");
-  return;
-}
-void *s=(void *)malloc(1024*1024);
+#include "../code/zx.h"
+#include "../code/Log/Log_H/LogDefine.h"
+
+//zx::Logger::ptr  g_liogger=ZX_LOG_NAME("system");
 int main(){
-      ucontext_t t;
-    ucontext_t t2;
-    getcontext(&t2);
-    getcontext(&t);
-    printf("hello world\n");
-    makecontext(&t2,&sv,0);//参数格式
-    t2.uc_link=&t;
-    t2.uc_stack.ss_sp=s;
-    t2.uc_stack.ss_size=1024*1024;
-    setcontext(&t2);
-    setcontext(&t);
-    return 0;
+    YAML::Node root=YAML::LoadFile("log.yml");//加载yam格式的信息
+     zx::Config::LoadFromYaml(root);
+    zx::Logger::ptr g_liogger=ZX_LOG_NAME("zhangxuan");
+
+  while(1){
+      ZX_LOG_INFO(g_liogger)<<"zxghakhdsiuad";
+  }
+
 }

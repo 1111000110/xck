@@ -2,22 +2,22 @@
 #include "../../Log/Log_H/LoggerManger.h"  // 包含日志管理器的头文件
 #include "../../Macro.h"  // 包含宏定义的头文件
 #include "../../util.h"  // 包含实用工具函数的头文件
-
 namespace zx {
     // 全局日志记录器
     static zx::Logger::ptr g_logger = ZX_LOG_NAME("system");
     // 线程局部存储，用于存储当前线程的调度器和协程
-    static thread_local Scheduler* t_scheduler = nullptr;
-    static thread_local Fiber* t_scheduler_fiber = nullptr;
+    static thread_local Scheduler* t_scheduler = nullptr;//此线程的调度器
+    static thread_local Fiber* t_scheduler_fiber = nullptr;//此线程的主协程
 
     // 构造函数
     Scheduler::Scheduler(size_t threads, bool use_caller, const std::string& name)
         : m_name(name) {
         ZX_ASSERT(threads > 0);  // 确保线程数大于0
         if (use_caller) {
-            zx::Fiber::GetThis();  // 获取当前协程
+            zx::Fiber::GetThis();  // 协程初始化
             --threads;  // 减少线程数，因为当前线程也会作为调度器线程
             ZX_ASSERT(GetThis() == nullptr);  // 确保在调度器创建前没有其他调度器
+            t_scheduler=this;
             m_rootFiber.reset(new Fiber(std::bind(&Scheduler::run, this), 0, true));  // 创建主协程
             zx::Thread::SetName(m_name);  // 设置线程名称
             t_scheduler_fiber = m_rootFiber.get();  // 存储主协程
@@ -56,6 +56,7 @@ namespace zx {
         m_stopping = false;  // 标记调度器为非停止状态
         ZX_ASSERT(m_threads.empty());  // 确保线程列表为空
         m_threads.resize(m_threadCount);  // 调整线程列表大小
+        sleep(2);
         for (size_t i = 0; i < m_threadCount; ++i) {
             m_threads[i].reset(new Thread(std::bind(&Scheduler::run, this), m_name + "_" + std::to_string(i)));  // 创建新线程
             m_threadIds.push_back(m_threads[i]->getId());  // 存储线程ID
@@ -124,17 +125,7 @@ namespace zx {
         t_scheduler = this;  // 存储当前线程的调度器
     }
 
-    // 切换到指定线程
-    void Scheduler::switchTo(int thread) {
-        ZX_ASSERT(Scheduler::GetThis() != nullptr);  // 确保当前线程的调度器不为空
-        if (Scheduler::GetThis() == this) {
-            if (thread == -1 || thread == zx::GetThreadid()) {
-                return;  // 如果目标线程是当前线程，则直接返回
-            }
-        }
-        schedule(Fiber::GetThis(), thread);  // 调度当前协程到指定线程
-        Fiber::YieldToHold();  // 让出CPU，进入挂起状态
-    }
+
 
     // 运行调度器
     void Scheduler::run() {
@@ -147,6 +138,7 @@ namespace zx {
         Fiber::ptr cb_fiber;
         FiberAndThread ft;
         while (true) {
+           
             ft.reset();
             bool tickle_me = false;
             bool is_active = false;
@@ -154,7 +146,7 @@ namespace zx {
                 MutexType::Lock lock(m_mutex);  // 锁定互斥锁
                 auto it = m_fibers.begin();
                 while (it != m_fibers.end()) {
-                    if (m_activeThreadCount != -1 && it->thread != zx::GetThreadid()) {
+                    if (it->thread != -1 && it->thread != zx::GetThreadid()) {
                         ++it;
                         tickle_me = true;
                         continue;
@@ -173,9 +165,11 @@ namespace zx {
                 tickle_me |= it != m_fibers.end();
             }
             if (tickle_me) {
-                tickle();  // 唤醒线程
+                //tickle();  // 唤醒线程
             }
+            
             if (ft.fiber && (ft.fiber->getstate() != Fiber::TERM && ft.fiber->getstate() != Fiber::EXCEPT)) {
+                 
                 ++m_activeThreadCount;
                 ft.fiber->swapIn();  // 切换到协程
                 --m_activeThreadCount;
@@ -210,11 +204,13 @@ namespace zx {
                     --m_activeThreadCount;
                     continue;
                 }
+                
                 if (idle_fiber->getstate() == Fiber::TERM) {
                     ZX_LOG_INFO(g_logger) << "idle fiber term";  // 日志记录空闲协程终止信息
                     break;  // 如果空闲协程终止，则退出循环
                 }
                 ++m_idleThreadCount;  // 增加空闲线程计数
+               
                 idle_fiber->swapIn();  // 切换到空闲协程
                 --m_idleThreadCount;  // 减少空闲线程计数
                 if (idle_fiber->getstate() != Fiber::TERM && idle_fiber->getstate() != Fiber::EXCEPT) {
@@ -254,5 +250,16 @@ namespace zx {
         if (m_caller) {
             m_caller->switchTo();  // 切换回原来的调度器
         }
+    }
+        // 切换到指定线程
+    void Scheduler::switchTo(int thread) {
+        ZX_ASSERT(Scheduler::GetThis() != nullptr);  // 确保当前线程的调度器不为空
+        if (Scheduler::GetThis() == this) {
+            if (thread == -1 || thread == zx::GetThreadid()) {
+                return;  // 如果目标线程是当前线程，则直接返回
+            }
+        }
+        schedule(Fiber::GetThis(), thread);  // 调度当前协程到指定线程
+        Fiber::YieldToHold();  // 让出CPU，进入挂起状态
     }
 }

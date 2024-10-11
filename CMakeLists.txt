@@ -31,12 +31,14 @@ target_link_libraries(test_thread  ${count1} )
 target_link_libraries(test_util  ${count1} )
 target_link_libraries(test_fiber ${count1} )
 target_link_libraries(test_scheduler ${count})
+target_link_libraries(test ${count1})
 #可执行文件依赖的
 add_dependencies(test_config  ${count})#main文件对动态库的依赖
 add_dependencies(test_thread  ${count})
 add_dependencies(test_util  ${count})
 add_dependencies(test_fiber ${count})
 add_dependencies(test_scheduler ${count})
+add_dependencies(test ${count})
 
 SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 SET(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)

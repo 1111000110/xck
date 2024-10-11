@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "../lib/libfiber.pdb"
   "../lib/libfiber.so"
   "CMakeFiles/fiber.dir/code/Fiber/Fiber_CC/fiber.cc.o"
+  "CMakeFiles/fiber.dir/code/Fiber/Fiber_CC/iomanager.cc.o"
   "CMakeFiles/fiber.dir/code/Fiber/Fiber_CC/scheduler.cc.o"
 )
 

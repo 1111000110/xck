@@ -10,9 +10,9 @@ void test_fiber(){
     zx::Fiber::GetThis();//初始化主协程
     ZX_LOG_INFO(g_logger)<<"main begin";
     zx::Fiber::ptr  fiber(new zx::Fiber(run_in_fiber));//创建新协程
-    fiber->swapIn();//将新协程执行到前台
+    fiber->call();//将新协程执行到前台
     ZX_LOG_INFO(g_logger)<<"main after swapIn";
-    fiber->swapIn();
+    fiber->call();
     ZX_LOG_INFO(g_logger)<<"main after end";
 
 }

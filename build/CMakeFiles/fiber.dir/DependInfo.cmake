@@ -5,6 +5,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
   "/home/zhangxuan/apps/XCK/code/Fiber/Fiber_CC/fiber.cc" "/home/zhangxuan/apps/XCK/build/CMakeFiles/fiber.dir/code/Fiber/Fiber_CC/fiber.cc.o"
+  "/home/zhangxuan/apps/XCK/code/Fiber/Fiber_CC/iomanager.cc" "/home/zhangxuan/apps/XCK/build/CMakeFiles/fiber.dir/code/Fiber/Fiber_CC/iomanager.cc.o"
   "/home/zhangxuan/apps/XCK/code/Fiber/Fiber_CC/scheduler.cc" "/home/zhangxuan/apps/XCK/build/CMakeFiles/fiber.dir/code/Fiber/Fiber_CC/scheduler.cc.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
